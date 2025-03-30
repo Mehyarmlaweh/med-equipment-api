@@ -27,7 +27,7 @@ async def identify_equipment(file: UploadFile = File(...)):
         # Clean up temp file
         Path(temp_file).unlink()
         
-        return JSONResponse(content={"equipment": result}, status_code=200)
+        return JSONResponse(content={"equipment_name": result}, status_code=200)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
@@ -48,3 +48,6 @@ async def vocalize_equipment(data: dict = Body(...)):
 # Run with: uvicorn api:app --reload
 # Test ON GIT BASH: curl -X POST "http://127.0.0.1:8000/identify-medical-equipment/" \
 #  -F "file=@C:\Users\14384\Desktop\test.jpeg"
+
+
+

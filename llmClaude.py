@@ -75,7 +75,7 @@ def invoke_bedrock_model(image_base64: str, prompt: str, model_id: str = "us.ant
         raise Exception(f"Failed to invoke Bedrock model: {str(e)}")
 
 # Main function to tie it all together
-def identify_medical_equipment(image_path: str, prompt: str = "Name the medical equipment in this picture in one short phrase. No other text allowed.") -> str:
+def identify_medical_equipment(image_path: str, prompt: str = "Name in the medical equipment in this picture in one short phrase. No other text allowed.") -> str:
     """Identify medical equipment in an image using Bedrock."""
     image_base64 = encode_image_to_base64(image_path)
     return invoke_bedrock_model(image_base64, prompt)
