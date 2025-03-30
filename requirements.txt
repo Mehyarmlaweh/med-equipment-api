@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+gtts
+pillow
+boto3
+botocore
